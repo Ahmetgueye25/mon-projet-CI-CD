@@ -23,3 +23,5 @@ jobs:
       - name: Lancer les tests
         run: |
           PYTHONPATH=. pytest
+      - name: construire l'image docker
+        run: docker build -t mon-image
