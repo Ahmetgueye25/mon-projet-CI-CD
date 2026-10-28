@@ -8,6 +8,8 @@ jobs:
       - name: installer python
         uses: 
           actions/setup-python@v5
+      - name: récuperer le code 
+        uses:
           actions/checkout@v4
       - name: installer les dépendances
         run: |
