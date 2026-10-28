@@ -1,17 +1,25 @@
 name: premier workflow
+
 on:
-  push
+  push:
+
 jobs:
   job1:
     runs-on: ubuntu-latest
+
     steps:
-      - name: installer python
-        uses: 
-          actions/setup-python@v5
-      - name: récuperer le code 
-        uses:
-          actions/checkout@v4
-      - name: installer les dépendances
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Installer les dépendances
         run: |
           pip install -r ./app/requirements.txt
-          pytest
+
+      - name: Lancer les tests
+        run: |
+          PYTHONPATH=. pytest
