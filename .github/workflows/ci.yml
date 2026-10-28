@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: installer python
-        run: actions/setup-python@v5
+        uses: actions/setup-python@v5
       - name: installer les dépendances
         run: |
           pip install -r ../app/requirements.txt
